@@ -106,7 +106,7 @@ void saveToAsJSON(std::ofstream& file, const PrintableAsJSON& printable)
 // Шаг 4. Проверка использования
 // ─────────────────────────────────────────────
 
-int main()
+int main(int argc, char** argv)
 {
     DataHTML  htmlData("<h1>Hello</h1>");
     DataText  textData("Hello");

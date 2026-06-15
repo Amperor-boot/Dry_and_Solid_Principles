@@ -1,0 +1,3 @@
+Hello World
+<html>Hello HTML</html>
+{ "data": "Hello JSON"}
