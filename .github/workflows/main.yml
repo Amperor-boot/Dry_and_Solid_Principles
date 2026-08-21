@@ -1,0 +1,25 @@
+name: Wokwi CI
+
+on: [push, pull_request]
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build firmware
+        run: |
+          # Add your build commands here, e.g.:
+          # pio run
+          # idf.py build
+
+      - name: Test with Wokwi
+        uses: wokwi/wokwi-ci-action@v1
+        with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          path: /            # Directory with wokwi.toml
+          timeout: 10000
+          expect_text: 'Hello, world!' # Optional: text to expect in serial output
+          fail_text: 'Error'          # Optional: text that indicates failure
